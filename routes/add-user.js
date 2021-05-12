@@ -8,7 +8,6 @@ const router = express.Router();
 
 const users = [];
 
-// /admin/add-product => GET
 router.get('/add-user', (req, res, next) => {
   res.render('add-user', {
     pageTitle: 'Add User', 
@@ -17,9 +16,13 @@ router.get('/add-user', (req, res, next) => {
     productCSS: true,
     activeAddProduct: true
   })});
-// /admin/add-product => POST
+
 router.post('/add-user', (req, res, next) => {
+  console.log(req.body.name);
   users.push({ name: req.body.name });
+  console.log(users);
   res.redirect('/');
 });
-module.exports = router;
+
+exports.routes = router;
+exports.users = users;

@@ -5,12 +5,12 @@
 <body>
   <%- include('includes/navigation.ejs') %>
 
-
+    <% console.log(userNames) %>
     <main>
       <% if (userNames && userNames.length > 0) { %>
         <div class="grid">
           <% for (let user of userNames) { %>
-
+            <% console.log(user) %>
             <article class="card product-item">
                 <header class="card__header">
                     <h1 class="product__title"><%= user.name %></h1>
@@ -19,7 +19,7 @@
           <% } %>
         </div>
       <% } else { %>
-        <h1>No Products Found</h1>
+        <h1>No Names Found</h1>
       <% } %>
 
     </main>
